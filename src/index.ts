@@ -39,16 +39,33 @@ const arr4:Array<string | number> = ["ok",3];
 //objects
 //declaring custom object type
 type obj = {
-   height:string,
-   weight:number
-   gender?:string
+   height:string;
+   weight:number;
+   gender?:string;
 };
 
 //using that object type to declare object
 const obj1: obj={
-   height:"five ten",
+   height:"five ten", 
    weight:34
 };
 
+interface car {
+   tyre:4;
+   break:1;
+}
+
+//functions
+
+//decleration
+const multiply = (n:number , m:number)=>{
+return n*m
+}
+
+//custom function type and decleration
+type adding = (n:number , m:number)=>number;
+const addition:adding = (n , m)=>{
+   return n*m;
+}
  
 
