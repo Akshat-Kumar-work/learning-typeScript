@@ -37,6 +37,18 @@ const arr3:Array<string> = [];
 const arr4:Array<string | number> = ["ok",3];
 
 //objects
+//declaring custom object type
+type obj = {
+   height:string,
+   weight:number
+   gender?:string
+};
+
+//using that object type to declare object
+const obj1: obj={
+   height:"five ten",
+   weight:34
+};
 
  
 
