@@ -67,5 +67,52 @@ type adding = (n:number , m:number)=>number;
 const addition:adding = (n , m)=>{
    return n*m;
 }
+
+//rest operator
+//accepting input as array
+type subtract = (...n:number[])=>number[];
+const subtracting : subtract = (...n)=>{
+  return n;
+}
+
+console.log(subtracting(34,3434,234,3,5));
+
+//decleration through function keyword
+function lol (n:number):number{
+return 34;
+}
+
+//function with object as parameter
+type GetDAtaType = (product:{name:string; stock:number})=>void;
+
+const checkFunc:GetDAtaType = (product)=>{
+console.log(product);
+}
+
+console.log(checkFunc({
+   name:"akshat",
+   stock:34
+}))
+
+//never type will return while throwing errors
+const errorhandler = ()=>{
+   throw new Error();
+}
+
+
+
+type themeMode = "light"|"dark";
+const mode : themeMode = "dark";
+
+//classes
+
+
+
+
+
+
+
+
+
  
 
