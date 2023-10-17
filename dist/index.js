@@ -58,3 +58,26 @@ const errorhandler = () => {
 };
 const mode = "dark";
 //classes
+class player {
+    constructor(height, weight, password) {
+        this.height = height;
+        this.weight = weight;
+        this.password = password;
+        this.getMyHeight = () => {
+            return this.height;
+        };
+    }
+}
+const akshat = new player(344, 523, "akshat");
+//player 1 is child class of player which can use protected attributes within its class only
+class player1 extends player {
+    constructor(height, weight, password, special) {
+        super(height, weight, password);
+        this.special = special;
+        this.getPassword = () => {
+            return this.password;
+        };
+    }
+}
+const akshat2 = new player1(23, 70, "paas", true);
+console.log(akshat2.getPassword());

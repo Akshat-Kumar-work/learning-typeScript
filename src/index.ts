@@ -38,6 +38,7 @@ const arr4:Array<string | number> = ["ok",3];
 
 //objects
 //declaring custom object type
+// ?-> is used to make property optional
 type obj = {
    height:string;
    weight:number;
@@ -50,10 +51,7 @@ const obj1: obj={
    weight:34
 };
 
-interface car {
-   tyre:4;
-   break:1;
-}
+
 
 //functions
 
@@ -105,6 +103,38 @@ type themeMode = "light"|"dark";
 const mode : themeMode = "dark";
 
 //classes
+class player{
+
+
+   constructor(private height:number , public weight:number , protected password : string){
+   }
+
+    getMyHeight= ()=>{
+      return this.height;
+   }
+}
+
+const akshat = new player(344,523 , "akshat");
+
+//player 1 is child class of player which can use protected attributes within its class only
+class player1 extends player{
+   constructor(height:number , weight:number ,password:string, public special:boolean){
+      super(height , weight , password)
+   }
+
+   getPassword= ()=>{
+      return this.password;
+   }
+}
+
+const akshat2 = new player1(23 , 70 , "paas" , true);
+
+console.log(akshat2.getPassword());
+
+
+
+
+
 
 
 
