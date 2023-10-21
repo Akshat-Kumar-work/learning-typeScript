@@ -40,18 +40,18 @@ const addition = (n, m) => {
 const subtracting = (...n) => {
     return n;
 };
-console.log(subtracting(34, 3434, 234, 3, 5));
+// console.log(subtracting(34,3434,234,3,5));
 //decleration through function keyword
 function lol(n) {
     return 34;
 }
-const checkFunc = (product) => {
-    console.log(product);
-};
-console.log(checkFunc({
-    name: "akshat",
-    stock: 34
-}));
+// const checkFunc:GetDAtaType = (product)=>{
+// console.log(product);
+// }
+// console.log(checkFunc({
+//    name:"akshat",
+//    stock:34
+// }))
 //never type will return while throwing errors
 const errorhandler = () => {
     throw new Error();
@@ -63,21 +63,34 @@ class player {
         this.height = height;
         this.weight = weight;
         this.password = password;
+        //function
         this.getMyHeight = () => {
             return this.height;
         };
+        this.id = String(Math.random() * 100);
+    }
+    //getter function -> no need to call function 
+    get getMyheight() {
+        return this.height;
+    }
+    //setter function
+    set changeheight(value) {
+        this.height = value;
     }
 }
 const akshat = new player(344, 523, "akshat");
+console.log("getter func", akshat.getMyheight);
+akshat.changeheight = 510;
 //player 1 is child class of player which can use protected attributes within its class only
-class player1 extends player {
-    constructor(height, weight, password, special) {
-        super(height, weight, password);
-        this.special = special;
-        this.getPassword = () => {
-            return this.password;
-        };
-    }
-}
-const akshat2 = new player1(23, 70, "paas", true);
-console.log(akshat2.getPassword());
+// class player1 extends player{
+//    constructor(height:number , weight:number ,password:string, public special:boolean){
+//       super(height , weight , password)
+//    }
+//    getPassword= ()=>{
+//       return this.password;
+//    }
+// }
+// const akshat2 = new player1(23 , 70 , "paas" , true);
+// console.log(akshat2.getPassword());
+// console.log(akshat2.getMyHeight());
+// console.log(akshat2.id);

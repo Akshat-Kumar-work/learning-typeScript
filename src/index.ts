@@ -73,7 +73,7 @@ const subtracting : subtract = (...n)=>{
   return n;
 }
 
-console.log(subtracting(34,3434,234,3,5));
+// console.log(subtracting(34,3434,234,3,5));
 
 //decleration through function keyword
 function lol (n:number):number{
@@ -83,14 +83,14 @@ return 34;
 //function with object as parameter
 type GetDAtaType = (product:{name:string; stock:number})=>void;
 
-const checkFunc:GetDAtaType = (product)=>{
-console.log(product);
-}
+// const checkFunc:GetDAtaType = (product)=>{
+// console.log(product);
+// }
 
-console.log(checkFunc({
-   name:"akshat",
-   stock:34
-}))
+// console.log(checkFunc({
+//    name:"akshat",
+//    stock:34
+// }))
 
 //never type will return while throwing errors
 const errorhandler = ()=>{
@@ -105,31 +105,54 @@ const mode : themeMode = "dark";
 //classes
 class player{
 
+   public readonly id :string;
 
    constructor(private height:number , public weight:number , protected password : string){
+   this.id = String(Math.random()*100);
    }
 
+   //function
     getMyHeight= ()=>{
       return this.height;
    }
+
+   //getter function -> no need to call function 
+   get getMyheight():number{
+      return this.height;
+   }
+
+   //setter function
+   set changeheight(value:number){
+      this.height =value;
+   }
+
 }
+
+
 
 const akshat = new player(344,523 , "akshat");
+console.log("getter func",akshat.getMyheight);
+akshat.changeheight = 510;
+
+
 
 //player 1 is child class of player which can use protected attributes within its class only
-class player1 extends player{
-   constructor(height:number , weight:number ,password:string, public special:boolean){
-      super(height , weight , password)
-   }
+// class player1 extends player{
+//    constructor(height:number , weight:number ,password:string, public special:boolean){
+//       super(height , weight , password)
+//    }
 
-   getPassword= ()=>{
-      return this.password;
-   }
-}
+//    getPassword= ()=>{
+//       return this.password;
+//    }
+// }
 
-const akshat2 = new player1(23 , 70 , "paas" , true);
+// const akshat2 = new player1(23 , 70 , "paas" , true);
 
-console.log(akshat2.getPassword());
+// console.log(akshat2.getPassword());
+// console.log(akshat2.getMyHeight());
+// console.log(akshat2.id);
+
 
 
 
